@@ -1,8 +1,16 @@
+//layouts
 import LayoutAdmin  from "../layouts/LayoutAdmin";
+import LayoutBasic from "../layouts/LayoutBasic";
+
+//admins
 import AdminHome from "../pages/Admin";
 import AdminSignIn from "../pages/Admin/SignIn";
 
-const rutes = [
+//pages
+import Home from "../pages/Home";
+import Contact from "../pages/Contact"
+
+const routes = [
     {
         path: "/admin",
         component: LayoutAdmin,
@@ -19,6 +27,23 @@ const rutes = [
                 exact:  true
             }
         ]
+    },
+    {
+        path: "/",
+        component: LayoutBasic,
+        exact: false,
+        routes:[
+            {
+                path: "/",
+                component: Home,
+                exact: true
+            },
+            {
+                path: "/contact",
+                component: Contact,
+                exact: true
+            }
+        ]
     }
 ];
-export default rutes;
+export default routes;

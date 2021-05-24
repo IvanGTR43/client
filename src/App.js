@@ -5,11 +5,11 @@ import './App.scss';
 function App() {
   return (
     <div className="app">
-      <h1>Hola</h1>
+      <h1>Hola Mundo</h1>
       <Router>
         <Switch>
           {rutes.map((route, index)=>(
-            <RouteWithSubRoutes {...route} key={index}/>
+            <RouteWithSubRoutes key={index} {...route} />
           ))}
         </Switch>
       </Router>

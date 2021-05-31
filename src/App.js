@@ -5,7 +5,6 @@ import './App.scss';
 function App() {
   return (
     <div className="app">
-      <h1>Hola Mundo</h1>
       <Router>
         <Switch>
           {rutes.map((route, index)=>(

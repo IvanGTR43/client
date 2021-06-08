@@ -4,6 +4,7 @@ import { Layout } from 'antd';
 import MenuTop from "../components/Admin/MenuTop";
 import MenuSider from "../components/Admin/MenuSider";
 import AdminSignIn from "../pages/Admin/SignIn";
+import { getAccessToken, getRefreshToken } from "../api/auth";
 import "./LayoutAdmin.scss"
 import '../config/routes';
 export default function LayoutAdmin(props) {
@@ -11,6 +12,9 @@ export default function LayoutAdmin(props) {
     const [menuCollapsed, setMenuCollapsed] = useState(false);
     const {Header, Content, Footer} = Layout;
     const user = null;
+    const accessToken = getAccessToken();
+    const refreshToken = getRefreshToken();
+    console.log(accessToken + refreshToken);
     if(!user){
         return(
             <>

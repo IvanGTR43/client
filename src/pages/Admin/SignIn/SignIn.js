@@ -2,12 +2,15 @@ import React from "react";
 import { Layout, Tabs } from "antd";
 import { Redirect } from "react-router-dom";
 import Logo from "../../../assets/img/png/logo-ivan.png";
+import RgisterForm from "../../../components/Admin/RegisterForm";
+import LoginForm from "../../../components/Admin/LoginForm";
 import "./SignIn.scss";
+import RegisterForm from "../../../components/Admin/RegisterForm";
 export default function SignIn(){
-    const { Content } = Layout;
-    const { TabPane } = Tabs;
-    return(
-        <Layout className="sign-in">
+  const { Content } = Layout;
+   const { TabPane } = Tabs;
+   return(
+    <Layout className="sign-in">
             <Content className="sign-in__content">
                 <h1 className="sign-in__content-logo">
                     <img src={Logo} alt="Ivan Gabriel Tacuapan Reyes"/>
@@ -15,10 +18,10 @@ export default function SignIn(){
                 <div className="sign-in__content-tabs">
                     <Tabs type="card">
                         <TabPane tab={<span>Entrar</span>} key="1">
-                            Componenete Login Form
+                            <LoginForm/>
                         </TabPane>
                         <TabPane tab={<span>Nuevo Usuario</span>} key="2">
-                            Compoemente REgister Form
+                            <RegisterForm/>
                         </TabPane>
                     </Tabs>
                 </div>

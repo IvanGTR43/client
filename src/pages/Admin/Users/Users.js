@@ -9,12 +9,12 @@ export default function Users(props) {
   const token = getAccessTokenApi();
   useEffect(() => {
     getUsersApi(token).then(response => {
-      setUsersActive(response);
+      setUsersActive(response.users);
     });
   }, [token]);
   return(
     <div className="users">
-      <ListUsers/>
+      <ListUsers usersActive={usersActive} usersInactive={usersInactive}/>
     </div>
   );
 };

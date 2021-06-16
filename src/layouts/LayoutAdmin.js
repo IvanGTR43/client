@@ -12,7 +12,7 @@ export default function LayoutAdmin(props) {
     const {routes} = props;
     const [menuCollapsed, setMenuCollapsed] = useState(false);
     const {Header, Content, Footer} = Layout;
-    console.log(userAuth());
+    //console.log(userAuth());
     const {user, isLoading} = userAuth();
 
     // const accessToken = getAccessTokenApi();

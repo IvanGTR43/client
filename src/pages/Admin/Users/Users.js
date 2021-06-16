@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { getAccessTokenApi } from "../../../api/auth";
-import { getUsersApi } from "../../../api/user";
+import { getUsersInactiveApi, getUsersActiveApi } from "../../../api/user";
 import ListUsers from "../../../components/Admin/Users/ListUsers";
 import "./Users.scss";
 export default function Users(props) {
@@ -8,8 +8,11 @@ export default function Users(props) {
   const [usersInactive, setUsersInactive] = useState([]);
   const token = getAccessTokenApi();
   useEffect(() => {
-    getUsersApi(token).then(response => {
+    getUsersActiveApi(token).then(response => {
       setUsersActive(response.users);
+    });
+    getUsersInactiveApi(token).then(response =>{
+      setUsersInactive(response.users);
     });
   }, [token]);
   return(

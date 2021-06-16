@@ -67,3 +67,38 @@ export function getUsersApi(token){
     return err.message;
   })
 }
+export function getUsersActiveApi(token){
+  const url =`${BASE_PATH}/${API_VERSION}/users-active?active=true`;
+  const params ={
+    method: "GET",
+    headers:{
+      "Content-Type": "application/json",
+      Authorization: token
+    }
+  };
+
+  return fetch(url, params).then(response =>{
+    return response.json();
+  }).then(result =>{
+    return result;
+  }).catch(err =>{
+    return err.message;
+  })
+}; export function getUsersInactiveApi(token){
+  const url =`${BASE_PATH}/${API_VERSION}/users-active?active=false`;
+  const params ={
+    method: "GET",
+    headers:{
+      "Content-Type": "application/json",
+      Authorization: token
+    }
+  };
+
+  return fetch(url, params).then(response =>{
+    return response.json();
+  }).then(result =>{
+    return result;
+  }).catch(err =>{
+    return err.message;
+  })
+}

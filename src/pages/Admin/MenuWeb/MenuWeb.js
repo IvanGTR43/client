@@ -13,7 +13,7 @@ export default function MenuWeb(props) {
   return(
 
     <div className="menu-web">
-      <MenuWebLIst menu={menu} setReloadMenuWeb={setReloadMenuWeb}/>
+      <MenuWebLIst menu={Array.from(menu)} setReloadMenuWeb={setReloadMenuWeb}/>
     </div>
   );
 };

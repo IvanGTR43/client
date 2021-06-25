@@ -48,3 +48,40 @@ export function activeMenuApi(token, id, status){
     return err.message;
   });
 };
+
+export function addMenuApi(token, menuData){
+  const url = `${BASE_PATH}/${API_VERSION}/add-menu`;
+  const params = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token
+    },
+    body: JSON.stringify(menuData)
+  }
+  return fetch(url, params).then(response => {
+    return response.json();
+  }).then(result => {
+    return result.message;
+  }).catch(err  => {
+    return err.message;
+  });
+};
+
+export function deleteMenuApi(token, id){
+  const url = `${BASE_PATH}/${API_VERSION}/delete-menu/${id}`;
+  const params = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: token
+    }
+  }
+  return fetch(url, params).then(response => {
+    return response.json();
+  }).then(result => {
+    return result.message;
+  }).catch((err) => {
+    console.log(err);
+  });
+};

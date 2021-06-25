@@ -1,0 +1,30 @@
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  ul {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin: 0px;
+
+    li {
+      display: inline !important;
+      list-style: none;
+      float: left;
+    }
+  }
+  a {
+    display: flex;
+    padding: 8px 8px;
+    margin-right: 10px;
+    border-radius: 10px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

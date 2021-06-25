@@ -8,11 +8,11 @@ export default function LayoutBasic({routes}) {
     return(
         <>
         <Row>
-            <Col md={4}/>
-            <Col md={16}>
+            <Col lg={4}/>
+            <Col lg={16}>
                 <MenuTop/>
             </Col>
-            <Col md={4}/>
+            <Col lg={4}/>
         </Row>
         <Content><LoadRoutesB routes={routes}/></Content>
         <Footer>Footer de Basci</Footer>

@@ -2,9 +2,10 @@ import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import { Layout, Row, Col } from "antd";
 import MenuTop from "../components/Web/MenuTop";
+import Footer from '../components/Web/Footer';
 import "../config/routes"
 export default function LayoutBasic({routes}) {
-    const {Header, Content, Footer} = Layout;
+    const {Header, Content} = Layout;
     return(
         <>
         <Row>
@@ -15,7 +16,7 @@ export default function LayoutBasic({routes}) {
             <Col lg={4}/>
         </Row>
         <Content><LoadRoutesB routes={routes}/></Content>
-        <Footer>Footer de Basci</Footer>
+        <Footer/>
     </>
     );
     // return(

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from "antd";
-import { AndroidFilled, ContactsFilled } from "@ant-design/icons";
+import { AndroidFilled, ContactsFilled, CodeTwoTone, DatabaseTwoTone, RightOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./NavigationFooter.scss";
 
@@ -17,7 +17,7 @@ export default function NavigationFooter() {
           <RenderListLeft />
         </Col>
         <Col md={12}>
-
+          <RenderListRight />
         </Col>
       </Row>
     </Row>
@@ -29,10 +29,48 @@ function RenderListLeft(props){
   return(
     <ul>
       <li>
-        <a href="#"><AndroidFilled /> Deescargar Aplicaciones</a>
+        <a href="#"><AndroidFilled />Descargar Aplicaciones</a>
       </li>
       <li>
-        <Link to="/contacts"><ContactsFilled /> Contacto</Link>
+        <Link to="/contacts"><ContactsFilled />Contacto</Link>
+      </li>
+      <li>
+        <Link to="/contacts"><DatabaseTwoTone /> Bases de Datos</Link>
+      </li>
+      v<li>
+        <Link to="/contacts"><CodeTwoTone /> Desarrollo Web</Link>
+      </li>
+      <li>
+        <Link to="/contacts"><AndroidFilled />Desarrollo Android</Link>
+      </li>
+      <li>
+        <Link to="/contacts"><RightOutlined />Politicas de Privacidad</Link>
+      </li>
+    </ul>
+  );
+}
+
+function RenderListRight(props){
+  const {} = props;
+  return(
+    <ul>
+      <li>
+        <a href="#"><AndroidFilled />Descargar Aplicaciones</a>
+      </li>
+      <li>
+        <Link to="/contacts"><ContactsFilled />Contacto</Link>
+      </li>
+      <li>
+        <Link to="/contacts"><DatabaseTwoTone /> Bases de Datos</Link>
+      </li>
+      v<li>
+        <Link to="/contacts"><CodeTwoTone /> Desarrollo Web</Link>
+      </li>
+      <li>
+        <Link to="/contacts"><AndroidFilled />Desarrollo Android</Link>
+      </li>
+      <li>
+        <Link to="/contacts"><RightOutlined />Politicas de Cookies</Link>
       </li>
     </ul>
   );

@@ -13,6 +13,7 @@ import AdminCourses from "../pages/Admin/Courses";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Projects from "../pages/Projects";
+import Courses from "../pages/Courses";
 
 //others
 import Error404 from "../pages/Error404"
@@ -70,6 +71,11 @@ const routes = [
             {
                 path:"/projects",
                 component: Projects,
+                exact: true
+            },
+            {
+                path: "/courses",
+                component: Courses,
                 exact: true
             },
             {

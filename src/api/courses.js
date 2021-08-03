@@ -73,7 +73,7 @@ export function updateCourseApi(token, course, id){
     return response.json();
   }).then(result => {
     return result;
-  }).cathc(err => {
+  }).catch(err => {
     return err;
   })
 }

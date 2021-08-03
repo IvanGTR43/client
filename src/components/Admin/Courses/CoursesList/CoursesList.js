@@ -4,7 +4,7 @@ import { EditFilled, DeleteFilled } from "@ant-design/icons";
 import DragSortableList from "react-drag-sortable";
 import AddEditCourseForm from "../AddEditCourseForm";
 import Modal from "../../../Modal";
-import { getCourseDataUdemyApi, deleteCourseApi } from "../../../../api/courses";
+import { getCourseDataUdemyApi, deleteCourseApi, updateCourseApi } from "../../../../api/courses";
 import { getAccessTokenApi } from "../../../../api/auth";
 
 
@@ -22,7 +22,12 @@ export default function CoursesList(props) {
     courses.forEach((course)=>{
       listCoursesArray.push({
         content: (
-          <Course course={course} deleteCourse={deleteCourse} addCourseModal={addCourseModal}/>
+          <Course
+            course={course}
+            deleteCourse={deleteCourse}
+            addCourseModal={addCourseModal}
+            updateCourseModal={updateCourseModal}
+          />
         )
       })
     });
@@ -30,7 +35,12 @@ export default function CoursesList(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courses]);
   const onSort = (sortedList, dropEvent) => {
-    console.log(sortedList);
+    const token = getAccessTokenApi();
+    sortedList.forEach((item)=>{
+      const { _id }= item.content.props.course;
+      const order = item.rank;
+      updateCourseApi(token, {order}, _id);
+    })
   }
   const addCourseModal = () => {
     setIsVisibleModal(true);
@@ -39,6 +49,17 @@ export default function CoursesList(props) {
       <AddEditCourseForm
         setIsVisibleModal={setIsVisibleModal}
         setReloadCourses={setReloadCourses}
+      />
+    );
+  }
+  const updateCourseModal = (course) => {
+    setIsVisibleModal(true);
+    setModalTitle("Actualizar Curso");
+    setModalContent(
+      <AddEditCourseForm
+        setIsVisibleModal={setIsVisibleModal}
+        setReloadCourses={setReloadCourses}
+        course={course}
       />
     );
   }
@@ -88,7 +109,7 @@ export default function CoursesList(props) {
   )
 }
 function Course(props){
-  const { course, deleteCourse } = props;
+  const { course, deleteCourse, updateCourseModal } = props;
   const [coursesData, setCoursesData] = useState(null);
   useEffect(() => {
     getCourseDataUdemyApi(course.idCourse).then( (response) => {
@@ -109,7 +130,7 @@ function Course(props){
       actions={[
         <Button
           type="primary"
-          onClick={ () => console.log("Editar Item")}>
+          onClick={ () => updateCourseModal(course)}>
             <EditFilled />
         </Button>,
         <Button

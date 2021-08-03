@@ -7,6 +7,9 @@ import "./AddEditCourseForm.scss";
 export default function AddEditCourseForm(props) {
   const { setIsVisibleModal, setReloadCourses, course } = props;
   const [courseData, setCourseData] = useState({});
+  useEffect(() => {
+    course ? setCourseData(course) : setCourseData({});
+  }, [course])
   const addCourse = () => {
     if(!courseData.idCourse){
       notification["warning"]({
@@ -20,16 +23,19 @@ export default function AddEditCourseForm(props) {
           notification["success"]({
             message: response.message,
             placement: "bottomRight"
-          })
+          });
+          setReloadCourses(true);
+          setIsVisibleModal(false);
+          setCourseData({});
         }else{
-          notification["err"]({
+          notification["warning"]({
             message: response.message,
             placement: "bottomRight"
           })
         }
       }).catch(err => {
         notification["error"]({
-          message: "Error del Servidor, Intente de NUevo mas Tarde",
+          message: "Error del Servidor, Intente de Nuevo mas Tarde",
           placeholder: "bottomRight"
         });
         console.log(err);
@@ -38,7 +44,6 @@ export default function AddEditCourseForm(props) {
 
   }
   const updateCourse = () => {
-    
     if(!course){
       notification["warning"]({
         message: "EL ID del curso es obligatorio"
@@ -51,8 +56,11 @@ export default function AddEditCourseForm(props) {
             message: response.message,
             placement: "bottomRight"
           });
+          setReloadCourses(true);
+          setIsVisibleModal(false);
+          setCourseData({});
         }else{
-          notification["error"]({
+          notification["warning"]({
             message: response.message,
             placement: "bottomRight"
           });

@@ -1,14 +1,16 @@
 import React from 'react';
 import { Modal as ModalAnt } from "antd";
 export default function Modal(props) {
-  const { children, title, isVisible, setIsVisible } = props;
+  const { children, title, isVisible, setIsVisible, ...other } = props;
   return(
     <ModalAnt
       title={title}
       centered
       visible={isVisible}
       onCancel={()=> setIsVisible(false)}
-      footer={[]}>
+      footer={[]}
+      {...other}
+    >
       {children}
     </ModalAnt>
   )

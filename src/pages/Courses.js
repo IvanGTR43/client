@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Spin, notification } from "antd";
+import { Helmet } from "react-helmet";
 import PresentationCourses from "../components/Web/Courses/PresentationCourses";
 import CoursesList from "../components/Web/Courses/CoursesList";
 import { getCoursesApi } from "../api/courses";
@@ -24,6 +25,11 @@ export default function Projects() {
     })
   }, []);
   return (
+    <>
+    <Helmet>
+      <title>Cursos | Ivan Gabriel</title>
+      <meta name="description" content="Cursos | Web de Programacion" data-react-helmet="true"/>
+    </Helmet>
     <Row>
       <Col md={4} />
       <Col md={16}>
@@ -36,5 +42,6 @@ export default function Projects() {
       </Col>
       <Col md={4} />
     </Row>
+    </>
   )
 }

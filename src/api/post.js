@@ -1,5 +1,6 @@
 import { result } from "lodash";
 import { BASE_PATH, API_VERSION } from "./config";
+
 export async function getPostsApi(limit, page){
   const url =`${BASE_PATH}/${API_VERSION}/get-posts?limit=${limit}&page=${page}`;
   try {
@@ -65,3 +66,14 @@ export function updatePostApi(token, id, post){
     return err;
   });
 };
+
+export function getPostApi(urlPost){
+  const url = `${BASE_PATH}/${API_VERSION}/get-post/${urlPost}`;
+  return fetch(url).then(response => {
+    return response.json();
+  }).then(result => {
+    return result;
+  }).catch(err => {
+    return err;
+  });
+}

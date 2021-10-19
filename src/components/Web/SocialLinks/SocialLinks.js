@@ -6,7 +6,7 @@ export default function SocialLinks(props) {
     <div className="social-links">
       <ul>
         <li key="1">
-          <a href="https://facebook.com"target="_blank" rel="noreferrer">
+          <a href="https://www.facebook.com/ivangtr4343"target="_blank" rel="noreferrer">
             <FacebookFilled style={{color: "#3b5998"}}/>
           </a>
         </li>

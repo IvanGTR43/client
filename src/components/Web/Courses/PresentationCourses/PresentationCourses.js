@@ -8,7 +8,7 @@ export default function PresentationCourses() {
       <p>Pagina de Cursos que he tomado para poder obtener los conocimimento de programación y haci poder
         laborar en uba empresa
       </p>
-      <p>Echale Un Vistazo!!!</p>
+      <p>Echales Un Vistazo!!!</p>
     </div>
   )
 }

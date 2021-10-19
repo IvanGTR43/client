@@ -21,14 +21,16 @@
     align-items: center;
     height: 100%;
 
-    h2 {
-      color: #fff;
-      font-weight: bold;
-      font-size: 60px;
-    }
-    h3 {
-      color: #fff;
-      font-size: 24px;
+    .description {
+      h2 {
+        color: #fff;
+        font-weight: bold;
+        font-size: 60px;
+      }
+      h3 {
+        color: #fff;
+        font-size: 24px;
+      }
     }
   }
 }

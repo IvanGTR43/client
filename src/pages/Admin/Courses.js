@@ -14,7 +14,7 @@ export default function Courses() {
           placement: "bottomRight"
         })
       }else{
-        //setCourses(result.courses);
+        setCourses(result.courses);
         setReloadCourses(false);
       }
     }).catch(err => {

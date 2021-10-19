@@ -8,9 +8,10 @@ export default function MainBanner(props) {
       <Row>
         <Col lg={4}>
         </Col>
-        <Col lg={16}>
-          <h2>Aprender Nuevas <br/> tecnologias Weby Movil</h2>
-          <h3>A traves de curos practicos, concisos uy actualizados, creados por <br/> profesionales con años de experiencia</h3>
+        <Col lg={16} className="description">
+          <h2>Ing. Ivan Gabriel Tacuapan Reyes</h2>
+          <h3>Profesional con gusto por el desarrollo de aplicaciones y sistemas Web
+          Y en constante aprendizaje tomando cursos y desarrollando nuevas ideas.</h3>
         </Col>
         <Col lg={4}>
         </Col>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Row, Col, Card, Button, Spin } from "antd"
+import { Row, Col, Card, Button, Spin } from "antd";
 import { getProjectsApi } from "../../../api/project";
+import "./ProjectCard.scss";
 export default function ProjectCard(props) {
   const [projects, setProjects] = useState(null);
   useEffect(() => {
@@ -19,8 +20,8 @@ export default function ProjectCard(props) {
   }
   return (
     <div className="project-card">
-      {projects.forEach(element => (
-      <CardProject element={element}/>
+      {projects.map((element, index) => (
+        <CardProject element={element} key={index}/>
       ))}
     </div>
   )
@@ -29,12 +30,9 @@ function CardProject(props){
   const { element } = props;
   console.log(element);
   return(
-    <Col md={8}>
-      <Card title={element.title}>
-        {element.descrpition}
-        <Button onClick={element.link}>Descargar</Button>
-    </Card>
-    </Col>
-    
+    <Card title={element.title} key={element._id}>
+      <p>{element.description}</p>
+      <a href={element.link} target="_blank" rel="noreferrer">DESCARGAR</a>
+  </Card>
   );
 }

@@ -1,6 +1,6 @@
 @import "../../../scss/index.scss";
 .how-my-projects-work {
-  margin-top: 100px;
+  padding-top: 100px;
   margin-bottom: 50px;
 
   &__title {
@@ -9,12 +9,14 @@
     line-height: 0.7;
     margin-bottom: 40px;
     h2 {
+      line-height: 35px;
       color: $font-light;
       font-size: 32px;
       font-weight: bold;
       text-transform: uppercase;
     }
     h3 {
+      padding-top: 8px;
       color: $primary-color-light;
     }
   }

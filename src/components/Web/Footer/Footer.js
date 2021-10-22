@@ -13,16 +13,16 @@ export default function Footer() {
         <Col md={4}/>
         <Col md={16}>
           <Row>
-            <Col lg={8}><MyInfo /></Col>
-            <Col lg={8}><NavigationFooter /></Col>
-            <Col lg={8}><NewsLetter /></Col>
+            <Col lg={12}><MyInfo /></Col>
+            <Col lg={12}><NavigationFooter /></Col>
+            {/* <Col lg={8}><NewsLetter /></Col> */}
           </Row>
           <Row className="footer__copyriht">
             <Col lg={12}>
-              CopyRight
+              Copyright
             </Col>
             <Col lg={12}>
-              Ivan Gabriel Tacuapan Reyes | desarrollador Web y movil
+              Ivan Gabriel Tacuapan Reyes | desarrollador Web y Móvil
             </Col>
           </Row>
         </Col>

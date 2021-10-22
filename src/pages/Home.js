@@ -12,9 +12,9 @@ export default function Home() {
         <meta name="description" content="Home | Web de Programacion" data-react-helmet="true"/>
       </Helmet>
 				<MainBanner/>
-				{/* <HomeProjects /> */}
+				<HomeProjects /> 
 				<HowMyProjectsWork/>
-        <ReviewProjects />
+        {/* <ReviewProjects /> */}
       </>
     );
 };

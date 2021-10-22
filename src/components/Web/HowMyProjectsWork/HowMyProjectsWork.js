@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Card } from "antd";
 import { ClockCircleOutlined, KeyOutlined } from "@ant-design/icons";
+import { MdTrendingUp, MdRecommend, MdDoneAll } from "react-icons/md"
 
 import "./HowMyProjectsWork.scss";
 export default function HowMyProjectsWork(props) {
@@ -27,9 +28,9 @@ export default function HowMyProjectsWork(props) {
           </Col>
           <Col md={8}>
             <CardInfo
-              title="Tecnologias con gran soporte"
-              subtitle="Se usan teconologias que son de gran uso por la comunidad de programadores"
-              icon={<KeyOutlined />}/>
+              title="Soporte"
+              subtitle="Se utilizan teconologias que son de gran uso por la comunidad de programadores"
+              icon={ <MdRecommend /> }/>
           </Col>
         </Row>
         <Row className="row-cards">
@@ -37,7 +38,7 @@ export default function HowMyProjectsWork(props) {
             <CardInfo
               title="Escalabilidad"
               subtitle="Proyectos construidos para poder agregar mas funciones progresivamente"
-              icon={<icon />}/>
+              icon={ <MdTrendingUp/> }/>
           </Col>
           <Col md={8}>
             <CardInfo
@@ -49,7 +50,7 @@ export default function HowMyProjectsWork(props) {
             <CardInfo
               title="Multiplataforma"
               subtitle="Apps Moviles para Android y iOS con la misma interfaz y mismo codigo fuente"
-              icon={<KeyOutlined />}/>
+              icon={<MdDoneAll />}/>
           </Col>
         </Row>
       </Col>

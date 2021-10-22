@@ -9,14 +9,14 @@ export default function NavigationFooter() {
     <Row className="navigation-footer">
       <Row>
         <Col md={24}>
-          <h3>Navegacion</h3>
+          <h3>Desarrollo Web y Móvil</h3>
         </Col>
       </Row>
       <Row>
-        <Col md={12}>
+        {/* <Col md={12}>
           <RenderListLeft />
-        </Col>
-        <Col md={12}>
+        </Col> */}
+        <Col md={24}>
           <RenderListRight />
         </Col>
       </Row>
@@ -55,22 +55,16 @@ function RenderListRight(props){
   return(
     <ul>
       <li>
-        <a href="#"><AndroidFilled />Descargar Aplicaciones</a>
+        <a href="#"><AndroidFilled />Desarrollo de Aplicaciones</a>
       </li>
       <li>
-        <Link to="/contacts"><ContactsFilled />Contacto</Link>
-      </li>
-      <li>
-        <Link to="/contacts"><DatabaseTwoTone /> Bases de Datos</Link>
+        <Link to="#"><DatabaseTwoTone />Bases de Datos</Link>
       </li>
       v<li>
-        <Link to="/contacts"><CodeTwoTone /> Desarrollo Web</Link>
+        <Link to="#"><CodeTwoTone /> Desarrollo Web</Link>
       </li>
       <li>
-        <Link to="/contacts"><AndroidFilled />Desarrollo Android</Link>
-      </li>
-      <li>
-        <Link to="/contacts"><RightOutlined />Politicas de Cookies</Link>
+        <Link to="#"><AndroidFilled />Desarrollo Android</Link>
       </li>
     </ul>
   );

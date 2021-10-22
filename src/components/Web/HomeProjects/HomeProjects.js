@@ -2,6 +2,8 @@ import React from 'react';
 import { Row, Col, Card, Button } from "antd";
 import { Link } from "react-router-dom";
 import Project1 from "../../../assets/img/png/5tenedores.png";
+import Project2 from "../../../assets/img/png/node.js.png";
+import Project3 from "../../../assets/img/png/react.jpg"
 import "./HomeProjects.scss";
 export default function HomeProjects(props) {
   return(
@@ -12,33 +14,26 @@ export default function HomeProjects(props) {
       <Col lg={4}/>
       <Col lg={16}>
         <Row className="row-projects">
-          <Col md={6}>
+          <Col md={8}>
             <CardProject
               title="Encuentra Restaurntes"
-              subtitle="React Native - Aplicacion Movil"
-              link="https://expo.io/"
+              subtitle="React Native (Expo)- Aplicación Movil"
+              link="https://github.com/IvanGTR43/tenedores"
               image={Project1}/>
           </Col>
-          <Col md={6}>
+          <Col md={8}>
             <CardProject
-              title="Gestion de Maquinaria"
-              subtitle="Web - HTML y PHP"
-              link="https://expo.io/"
-              image={Project1}/>
+              title="Mi pagina(Back-End)"
+              subtitle="Node JS"
+              link="https://github.com/IvanGTR43/server-portafolio"
+              image={Project2}/>
           </Col>
-          <Col md={6}>
+          <Col md={8}>
             <CardProject
-              title="Web Personal"
-              subtitle="MERN Stack"
-              link="https://expo.io/"
-              image={Project1}/>
-          </Col>
-          <Col md={6}>
-            <CardProject
-              title="Encuentra Restaurntes"
-              subtitle="React Native - Aplicacion Movil"
-              link="https://expo.io/"
-              image={Project1}/>
+              title="Web Personal (Front-End)"
+              subtitle="React JS"
+              link="https://github.com/IvanGTR43/client"
+              image={Project3}/>
           </Col>
         </Row>
       </Col>

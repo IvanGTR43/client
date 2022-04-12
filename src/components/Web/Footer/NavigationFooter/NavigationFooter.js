@@ -1,6 +1,12 @@
-import React from 'react';
+import React from "react";
 import { Row, Col } from "antd";
-import { AndroidFilled, ContactsFilled, CodeTwoTone, DatabaseTwoTone, RightOutlined } from "@ant-design/icons";
+import {
+  AndroidFilled,
+  ContactsFilled,
+  CodeTwoTone,
+  DatabaseTwoTone,
+  RightOutlined,
+} from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./NavigationFooter.scss";
 
@@ -13,58 +19,87 @@ export default function NavigationFooter() {
         </Col>
       </Row>
       <Row>
-        {/* <Col md={12}>
+        <Col md={12}>
           <RenderListLeft />
-        </Col> */}
+        </Col>
         <Col md={24}>
           <RenderListRight />
         </Col>
       </Row>
     </Row>
-  )
+  );
 }
 
-function RenderListLeft(props){
+function RenderListLeft(props) {
   const {} = props;
-  return(
+  return (
     <ul>
       <li>
-        <a href="#"><AndroidFilled />Descargar Aplicaciones</a>
+        <a href="#">
+          <AndroidFilled />
+          Descargar Aplicaciones
+        </a>
       </li>
       <li>
-        <Link to="/contacts"><ContactsFilled />Contacto</Link>
+        <Link to="/contacts">
+          <ContactsFilled />
+          Contacto
+        </Link>
       </li>
       <li>
-        <Link to="/contacts"><DatabaseTwoTone /> Bases de Datos</Link>
+        <Link to="/contacts">
+          <DatabaseTwoTone /> Bases de Datos
+        </Link>
       </li>
-      v<li>
-        <Link to="/contacts"><CodeTwoTone /> Desarrollo Web</Link>
+      v
+      <li>
+        <Link to="/contacts">
+          <CodeTwoTone /> Desarrollo Web
+        </Link>
       </li>
       <li>
-        <Link to="/contacts"><AndroidFilled />Desarrollo Android</Link>
+        <Link to="/contacts">
+          <AndroidFilled />
+          Desarrollo Android
+        </Link>
       </li>
       <li>
-        <Link to="/contacts"><RightOutlined />Politicas de Privacidad</Link>
+        <Link to="/contacts">
+          <RightOutlined />
+          Politicas de Privacidad
+        </Link>
       </li>
     </ul>
   );
 }
 
-function RenderListRight(props){
+function RenderListRight(props) {
   const {} = props;
-  return(
+  return (
     <ul>
       <li>
-        <a href="#"><AndroidFilled />Desarrollo de Aplicaciones</a>
+        <a href="#">
+          <AndroidFilled />
+          Desarrollo de Aplicaciones
+        </a>
       </li>
       <li>
-        <Link to="#"><DatabaseTwoTone />Bases de Datos</Link>
+        <Link to="#">
+          <DatabaseTwoTone />
+          Bases de Datos
+        </Link>
       </li>
-      v<li>
-        <Link to="#"><CodeTwoTone /> Desarrollo Web</Link>
+      v
+      <li>
+        <Link to="#">
+          <CodeTwoTone /> Desarrollo Web
+        </Link>
       </li>
       <li>
-        <Link to="#"><AndroidFilled />Desarrollo Android</Link>
+        <Link to="#">
+          <AndroidFilled />
+          Desarrollo Android
+        </Link>
       </li>
     </ul>
   );
